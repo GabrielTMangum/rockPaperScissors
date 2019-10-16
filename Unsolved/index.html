@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rock, Paper, Scissors Game</title>
+</head>
+
+<body>
+    <script>
+
+        var rps = ["r", "p", "s"]
+
+        var wins = 0;
+        var losses = 0;
+        var ties = 0;
+
+        for (var i = 0; i < 10; i++) {
+            var playerChoice = prompt("r, p, or s?")
+            playerChoice = playerChoice.toLowerCase();
+            var cpuChoice = rps[Math.floor(Math.random() * rps.length)];
+
+            alert("The computer picked " + cpuChoice)
+
+            if (playerChoice === cpuChoice) {
+                ties++;
+                alert("You have tied " + ties + " time(s)");
+            }
+            else if(playerChoice === "r" && cpuChoice === "s"){
+                wins++;
+                alert("You have won " + wins + " time(s)")
+            }
+            else if(playerChoice === "r" && cpuChoice === "p"){
+                losses++;
+                alert("You have lost " + losses + " times(s)")
+            }
+            else if(playerChoice === "s" && cpuChoice === "r"){
+                losses++;
+                alert("You have lost " + losses + " times(s)")
+            }
+            else if(playerChoice === "s" && cpuChoice === "p"){
+                wins++;
+                alert("You have won " + wins + " time(s)")
+            }
+            else if(playerChoice === "p" && cpuChoice === "r"){
+                wins++;
+                alert("You have won " + wins + " time(s)")
+            }
+            else if(playerChoice === "p" && cpuChoice === "s"){
+                losses++;
+                alert("You have lost " + losses + " times(s)")
+            }
+        }
+        alert("Wins: " + wins + "\r\n Losses: " + losses + "\r\n Ties: " + ties);
+            
+    </script>
+
+</body>
+
+</html>
